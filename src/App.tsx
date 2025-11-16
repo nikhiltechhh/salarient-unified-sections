@@ -19,13 +19,11 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+
       <BrowserRouter>
         <Routes>
 
-          {/* NO Header/Footer */}
-          <Route path="/" element={<Index />} />
-
-          {/* WRAPPED WITH HEADER + FOOTER */}
+          {/* Layout with Header + Footer */}
           <Route
             element={
               <>
@@ -37,6 +35,7 @@ const App = () => (
               </>
             }
           >
+            <Route index element={<Index />} />
             <Route path="/services/:serviceId" element={<ServiceDetail />} />
             <Route path="/payment" element={<Payment />} />
           </Route>
