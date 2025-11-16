@@ -35,7 +35,7 @@ const Hero = () => {
 
       <div className="container relative z-20 px-4 py-12 md:px-8 md:py-16 lg:py-20">
         {/* Video Card */}
-        <div className="mb-8 flex justify-center md:justify-start lg:mb-12">
+        {/* <div className="mb-8 flex justify-center md:justify-start lg:mb-12">
           <div className="group flex max-w-md cursor-pointer items-center gap-4 rounded-xl border border-border/50 bg-background/90 p-4 shadow-xl backdrop-blur-sm transition-all hover:scale-[1.02] hover:shadow-2xl">
             <div className="relative h-20 w-28 overflow-hidden rounded-lg bg-gradient-to-br from-primary/30 to-accent/30">
               <div className="absolute inset-0 flex items-center justify-center">
@@ -43,7 +43,7 @@ const Hero = () => {
                   <Play className="h-6 w-6 fill-primary text-primary" />
                 </div>
               </div>
-              {/* Animated pulse ring */}
+            \
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="h-12 w-12 animate-ping rounded-full bg-primary/20" />
               </div>
@@ -58,40 +58,59 @@ const Hero = () => {
               </button>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Main Content */}
-        <div className="mx-auto max-w-5xl text-center">
+        <div className="mx-auto max-w-5xl mt-20 text-center">
           <h1 className="mb-6 animate-fade-in text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
-            HR software
+            HR software 
             <br />
             <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-              for every business
+              built for every business
             </span>
           </h1>
 
           <p className="mx-auto mb-10 max-w-3xl animate-fade-in text-base text-foreground/80 sm:text-lg md:text-xl lg:text-2xl [animation-delay:200ms]">
-            Streamline all your HR processes and deliver exceptional employee experiences
-            with Salarient—cloud-based HR software that's intuitive, agile, mobile-friendly.
+            Salarient helps you simplify HR operations and create exceptional employee experiences with a smart, cloud-based, mobile-friendly platform.
           </p>
 
           {/* CTA Buttons */}
           <div className="flex animate-fade-in flex-col items-center justify-center gap-4 sm:flex-row [animation-delay:400ms]">
-            <Button
-              size="lg"
-              className="group min-w-[200px] bg-primary text-base font-medium text-primary-foreground shadow-xl shadow-primary/30 transition-all hover:scale-105 hover:bg-primary/90 hover:shadow-2xl hover:shadow-primary/40"
-            >
-              Sign up for free trial
-              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="min-w-[200px] border-2 border-foreground/20 bg-background/90 text-base font-medium text-foreground backdrop-blur-sm transition-all hover:scale-105 hover:border-foreground/40 hover:bg-background hover:shadow-xl"
-            >
-              Request Demo
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
+           <a href="tel:+916281576979">
+  <Button
+    size="lg"
+    className="group min-w-[200px] bg-primary text-base font-medium text-primary-foreground shadow-xl shadow-primary/30 transition-all hover:scale-105 hover:bg-primary/90 hover:shadow-2xl hover:shadow-primary/40"
+  >
+    Get Started Now
+    <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+  </Button>
+</a>
+
+            <a href="#services">
+  <Button
+    size="lg"
+    variant="outline"
+    className="
+      min-w-[200px]
+      border-2 border-foreground/20
+      bg-background/90
+      text-base font-medium
+      text-foreground
+      backdrop-blur-sm
+      transition-all
+      hover:text-foreground
+      hover:scale-105
+      hover:border-foreground/40
+      hover:bg-background
+      hover:shadow-xl
+      cursor-pointer
+    "
+  >
+    Explore Services
+    <ArrowRight className="ml-2 h-5 w-5" />
+  </Button>
+</a>
+
           </div>
 
           {/* Customer Logos */}
@@ -101,7 +120,7 @@ const Hero = () => {
                 Trusted by leading companies worldwide
               </p>
             </div>
-            <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 lg:gap-16">
+            {/* <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 lg:gap-16">
               {customerLogos.map((logo, index) => (
                 <div
                   key={index}
@@ -116,7 +135,7 @@ const Hero = () => {
                   </span>
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
