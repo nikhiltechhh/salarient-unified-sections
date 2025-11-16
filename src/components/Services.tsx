@@ -85,9 +85,9 @@ const Services = () => {
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
-              <Link
+              <a
                 key={index}
-                to={`/services/${service.id}`}
+                href={`/services/${service.id}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative bg-white rounded-2xl overflow-hidden border-2 border-gray-200 hover:border-blue-600 transition-all duration-500 hover:shadow-2xl block"
@@ -101,15 +101,12 @@ const Services = () => {
                     alt={service.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  {/* Blue Overlay */}
                   <div className="absolute inset-0 bg-blue-600 opacity-20 group-hover:opacity-10 transition-opacity duration-500"></div>
                   
-                  {/* Icon Badge */}
                   <div className={`absolute top-6 left-6 w-16 h-16 rounded-xl bg-blue-600 flex items-center justify-center shadow-lg transform transition-all duration-500 ${hoveredIndex === index ? 'scale-110 rotate-6' : ''}`}>
                     <Icon className="w-8 h-8 text-white" />
                   </div>
 
-                  {/* Stats Badge */}
                   <div className="absolute top-6 right-6 bg-white rounded-lg px-4 py-2 shadow-lg">
                     <div className="text-2xl font-bold text-blue-600">
                       {service.stat}
@@ -118,7 +115,6 @@ const Services = () => {
                   </div>
                 </div>
 
-                {/* Content */}
                 <div className="p-8">
                   <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">
                     {service.title}
@@ -128,7 +124,6 @@ const Services = () => {
                     {service.description}
                   </p>
 
-                  {/* Features List */}
                   <ul className="space-y-2 mb-6">
                     {service.features.map((feature, idx) => (
                       <li key={idx} className="flex items-center gap-2 text-sm text-gray-700">
@@ -138,16 +133,14 @@ const Services = () => {
                     ))}
                   </ul>
 
-                  {/* Learn More Link */}
                   <div className="flex items-center gap-2 text-blue-600 font-semibold group/link">
                     <span className="transition-all duration-300 group-hover/link:translate-x-1">Learn More</span>
                     <ArrowRight className="w-5 h-5 transition-all duration-300 group-hover/link:translate-x-2" />
                   </div>
                 </div>
 
-                {/* Bottom Accent Line */}
                 <div className="absolute bottom-0 left-0 right-0 h-1 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-              </Link>
+              </a>
             );
           })}
         </div>
@@ -163,13 +156,12 @@ const Services = () => {
           
           <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
             <a href="tel:+916281576979" className="inline-block">
-                <button className="group px-8 py-4 bg-blue-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl hover:bg-blue-700 transition-all duration-300 flex items-center gap-2">
-                    Get Started Today
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </button>
-                </a>
+              <button className="group px-8 py-4 bg-blue-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl hover:bg-blue-700 transition-all duration-300 flex items-center gap-2">
+                Get Started Today
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </button>
+            </a>
 
-            
             <button className="px-8 py-4 bg-white text-blue-600 font-semibold rounded-xl border-2 border-blue-600 hover:bg-blue-50 transition-all duration-300">
               Schedule a Demo
             </button>
