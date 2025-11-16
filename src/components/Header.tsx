@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -11,6 +11,16 @@ interface NavItem {
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navItems: NavItem[] = [
     { 
@@ -42,7 +52,14 @@ const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur-md supports-[backdrop-filter]:bg-background/80">
+    <header 
+      className={cn(
+        "sticky top-0 z-50 w-full transition-all duration-300",
+        isScrolled 
+          ? "border-b border-border/40 bg-background/95 backdrop-blur-md shadow-md supports-[backdrop-filter]:bg-background/80" 
+          : "border-b border-transparent bg-transparent"
+      )}
+    >
       <div className="container flex h-16 items-center justify-between px-4 md:px-8">
         {/* Logo */}
         <div className="flex items-center gap-2">
