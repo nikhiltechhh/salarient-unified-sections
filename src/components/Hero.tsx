@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
+import heroBg from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
   const customerLogos = [
@@ -11,20 +12,40 @@ const Hero = () => {
   ];
 
   return (
-    <section className="relative min-h-[calc(100vh-4rem)] overflow-hidden bg-gradient-to-br from-[hsl(var(--hero-gradient-start))] to-[hsl(var(--hero-gradient-end))]">
-      {/* Decorative Elements */}
-      <div className="absolute bottom-0 left-0 h-48 w-48 bg-gradient-to-tr from-yellow-200/30 to-transparent blur-3xl" />
-      <div className="absolute bottom-0 right-0 h-48 w-48 bg-gradient-to-tl from-yellow-200/30 to-transparent blur-3xl" />
-      <div className="absolute bottom-0 left-1/4 h-32 w-32 rotate-45 bg-yellow-300/20 blur-2xl" />
-      <div className="absolute bottom-0 right-1/4 h-32 w-32 rotate-45 bg-yellow-300/20 blur-2xl" />
+    <section className="relative min-h-[calc(100vh-4rem)] overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 z-0">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${heroBg})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-background/85" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--hero-gradient-start))]/40 to-[hsl(var(--hero-gradient-end))]/40" />
+      </div>
 
-      <div className="container relative px-4 py-12 md:px-8 md:py-16 lg:py-20">
+      {/* Decorative Elements */}
+      <div className="absolute bottom-0 left-0 z-10 h-48 w-48 bg-gradient-to-tr from-yellow-200/20 to-transparent blur-3xl" />
+      <div className="absolute bottom-0 right-0 z-10 h-48 w-48 bg-gradient-to-tl from-yellow-200/20 to-transparent blur-3xl" />
+      <div className="absolute bottom-0 left-1/4 z-10 h-32 w-32 rotate-45 bg-yellow-300/15 blur-2xl" />
+      <div className="absolute bottom-0 right-1/4 z-10 h-32 w-32 rotate-45 bg-yellow-300/15 blur-2xl" />
+      
+      {/* Animated Circles */}
+      <div className="absolute right-10 top-20 z-10 h-24 w-24 animate-pulse rounded-full bg-primary/5 blur-xl" />
+      <div className="absolute left-10 top-40 z-10 h-32 w-32 animate-pulse rounded-full bg-accent/5 blur-xl delay-500" />
+
+      <div className="container relative z-20 px-4 py-12 md:px-8 md:py-16 lg:py-20">
         {/* Video Card */}
         <div className="mb-8 flex justify-center md:justify-start lg:mb-12">
-          <div className="group flex max-w-md cursor-pointer items-center gap-4 rounded-xl border bg-background/80 p-4 shadow-sm backdrop-blur transition-all hover:shadow-md">
-            <div className="h-20 w-28 overflow-hidden rounded-lg bg-gradient-to-br from-primary/20 to-accent/20">
-              <div className="flex h-full items-center justify-center">
-                <Play className="h-8 w-8 text-primary" />
+          <div className="group flex max-w-md cursor-pointer items-center gap-4 rounded-xl border border-border/50 bg-background/90 p-4 shadow-xl backdrop-blur-sm transition-all hover:scale-[1.02] hover:shadow-2xl">
+            <div className="relative h-20 w-28 overflow-hidden rounded-lg bg-gradient-to-br from-primary/30 to-accent/30">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-background/80 backdrop-blur-sm transition-transform group-hover:scale-110">
+                  <Play className="h-6 w-6 fill-primary text-primary" />
+                </div>
+              </div>
+              {/* Animated pulse ring */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="h-12 w-12 animate-ping rounded-full bg-primary/20" />
               </div>
             </div>
             <div className="flex flex-col gap-1">
@@ -41,22 +62,24 @@ const Hero = () => {
 
         {/* Main Content */}
         <div className="mx-auto max-w-5xl text-center">
-          <h1 className="mb-6 text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
+          <h1 className="mb-6 animate-fade-in text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
             HR software
             <br />
-            for every business
+            <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
+              for every business
+            </span>
           </h1>
 
-          <p className="mx-auto mb-10 max-w-3xl text-base text-foreground/80 sm:text-lg md:text-xl lg:text-2xl">
+          <p className="mx-auto mb-10 max-w-3xl animate-fade-in text-base text-foreground/80 sm:text-lg md:text-xl lg:text-2xl [animation-delay:200ms]">
             Streamline all your HR processes and deliver exceptional employee experiences
             with Salarient—cloud-based HR software that's intuitive, agile, mobile-friendly.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <div className="flex animate-fade-in flex-col items-center justify-center gap-4 sm:flex-row [animation-delay:400ms]">
             <Button
               size="lg"
-              className="group min-w-[200px] bg-primary text-base font-medium text-primary-foreground shadow-lg transition-all hover:bg-primary/90 hover:shadow-xl"
+              className="group min-w-[200px] bg-primary text-base font-medium text-primary-foreground shadow-xl shadow-primary/30 transition-all hover:scale-105 hover:bg-primary/90 hover:shadow-2xl hover:shadow-primary/40"
             >
               Sign up for free trial
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
@@ -64,7 +87,7 @@ const Hero = () => {
             <Button
               size="lg"
               variant="outline"
-              className="min-w-[200px] border-2 border-foreground/20 bg-background/80 text-base font-medium text-foreground backdrop-blur transition-all hover:border-foreground/40 hover:bg-background"
+              className="min-w-[200px] border-2 border-foreground/20 bg-background/90 text-base font-medium text-foreground backdrop-blur-sm transition-all hover:scale-105 hover:border-foreground/40 hover:bg-background hover:shadow-xl"
             >
               Request Demo
               <ArrowRight className="ml-2 h-5 w-5" />
@@ -72,12 +95,18 @@ const Hero = () => {
           </div>
 
           {/* Customer Logos */}
-          <div className="mt-16 md:mt-20 lg:mt-24">
+          <div className="mt-16 animate-fade-in md:mt-20 lg:mt-24 [animation-delay:600ms]">
+            <div className="mb-6">
+              <p className="text-sm font-medium text-muted-foreground">
+                Trusted by leading companies worldwide
+              </p>
+            </div>
             <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 lg:gap-16">
               {customerLogos.map((logo, index) => (
                 <div
                   key={index}
-                  className="flex items-center justify-center opacity-60 transition-opacity hover:opacity-100"
+                  className="flex items-center justify-center opacity-60 transition-all duration-300 hover:scale-110 hover:opacity-100"
+                  style={{ animationDelay: `${800 + index * 100}ms` }}
                 >
                   <span
                     className="text-xl font-bold md:text-2xl"
@@ -92,8 +121,8 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Bottom Decorative Mountains */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-yellow-100/40 to-transparent" />
+      {/* Bottom Decorative Element */}
+      <div className="absolute bottom-0 left-0 right-0 z-10 h-24 bg-gradient-to-t from-yellow-100/20 to-transparent" />
     </section>
   );
 };
