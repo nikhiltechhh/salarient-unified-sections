@@ -62,10 +62,12 @@ const Header = () => {
     >
       <div className="container flex h-16 items-center justify-between px-4 md:px-8">
         {/* Logo */}
-        <div className="flex items-center gap-2">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary shadow-lg shadow-primary/20">
-            <span className="text-lg font-bold text-primary-foreground">S</span>
-          </div>
+        <div className="flex items-center gap-3">
+          <img 
+            src="/placeholder.svg" 
+            alt="Salarient Logo" 
+            className="h-10 w-10 rounded-lg object-contain"
+          />
           <div className="flex flex-col">
             <span className="text-lg font-bold leading-tight text-foreground">Salarient</span>
             <span className="text-xs text-muted-foreground">HR Payroll Solutions</span>
