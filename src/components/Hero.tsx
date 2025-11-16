@@ -1,8 +1,23 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
+import { useState, useEffect } from "react";
 
 const Hero = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  
+  const heroImages = [
+    "https://i.ibb.co/CKm221g3/Whats-App-Image-2025-11-16-at-9-55-20-PM.jpg",
+    "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1920&h=1080&fit=crop",
+    "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1920&h=1080&fit=crop"
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
   const customerLogos = [
     { name: "Meesho", color: "#E91E63" },
     { name: "GEP", color: "#1976D2" },
@@ -13,14 +28,35 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-[calc(100vh-4rem)] overflow-hidden">
-      {/* Background Image with Overlay */}
+      {/* Background Image Carousel with Overlay */}
       <div className="absolute inset-0 z-0">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${heroBg})` }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-background/85" />
+        {heroImages.map((image, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${
+              index === currentSlide ? "opacity-100" : "opacity-0"
+            }`}
+            style={{ backgroundImage: `url(${image})` }}
+          />
+        ))}
+        <div className="absolute inset-0 bg-gradient-to-br from-background/9 via-background/90 to-background/85" />
         <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--hero-gradient-start))]/40 to-[hsl(var(--hero-gradient-end))]/40" />
+      </div>
+      
+      {/* Carousel Indicators */}
+      <div className="absolute bottom-8 left-1/2 z-30 flex -translate-x-1/2 gap-2">
+        {heroImages.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentSlide(index)}
+            className={`h-2 rounded-full transition-all duration-300 ${
+              index === currentSlide
+                ? "w-8 bg-primary"
+                : "w-2 bg-foreground/30 hover:bg-foreground/50"
+            }`}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
       </div>
 
       {/* Decorative Elements */}
@@ -43,7 +79,6 @@ const Hero = () => {
                   <Play className="h-6 w-6 fill-primary text-primary" />
                 </div>
               </div>
-            \
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="h-12 w-12 animate-ping rounded-full bg-primary/20" />
               </div>

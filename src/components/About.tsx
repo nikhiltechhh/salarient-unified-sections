@@ -43,13 +43,13 @@ const About = () => {
 
       setStats({
         clients: Math.floor(50 * progress),
-        interactions: Math.floor(50 * progress),
+        interactions: Math.floor(5000 * progress),
         satisfaction: Math.floor(98 * progress),
       });
 
       if (currentStep >= steps) {
         clearInterval(interval);
-        setStats({ clients: 50, interactions: 50, satisfaction: 98 });
+        setStats({ clients: 50, interactions: 5000, satisfaction: 98 });
       }
     }, duration / steps);
   };
@@ -111,9 +111,9 @@ const About = () => {
         >
           <div className="grid md:grid-cols-2 gap-8">
             {/* CEO */}
-            <div className="flex flex-col items-center text-center">
+            <div className="flex flex-col items-center text-center shadow-xl rounded-xl">
               <div className="relative inline-block mb-4">
-                <h3 className="text-3xl font-bold text-gray-900">Vamshi Krishna Reddy</h3>
+                <h3 className="text-3xl font-bold text-gray-900">G Vamshi Krishna Reddy</h3>
                 <span className="absolute -top-8 -right-8 bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md">
                   Founder & CEO
                 </span>
@@ -124,7 +124,7 @@ const About = () => {
             </div>
 
             {/* Co-founder */}
-            <div className="flex flex-col items-center text-center">
+            <div className="flex flex-col items-center text-center shadow-xl rounded-xl">
               <div className="relative inline-block mb-4">
                 <h3 className="text-3xl font-bold text-gray-900">K Naveen Reddy</h3>
                 <span className="absolute -top-8 -right-20 bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md whitespace-nowrap">
@@ -148,10 +148,8 @@ const About = () => {
             }`}
           >
             <p className="text-xl text-gray-700 leading-relaxed">
-              Salarient is a <span className="font-bold text-gray-900">global leader in payroll management</span> and 
-              <span className="font-bold text-gray-900"> customer experience</span>. We specialize in building strategic, 
-              personalized support solutions that help brands across industries increase satisfaction, accelerate growth, 
-              and operate more efficiently.
+              Founded in 2025, <span className="font-bold text-gray-900">SALARIENT HR solutions </span> was born from a simple frustration: payroll shouldn't be this complicated. Our founders, former CFOs at growing companies, experienced firsthand the challenges of managing payroll with outdated, inflexible systems.
+              <span className="font-bold text-gray-900"> </span>. They envisioned a modern payroll platform that would be powerful enough for enterprise needs yet simple enough for small businesses. Today, SALARIENT HR solutions serves 50+ businesses and processes 5000+ payrolls annually. We've grown from a small startup to a leading payroll provider, but we've never lost sight of our core mission: making payroll and HR management effortless for businesses everywhere.
             </p>
 
             <div
@@ -163,9 +161,7 @@ const About = () => {
             >
               <h3 className="text-2xl font-bold text-gray-900 mb-3">Our Mission</h3>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Empowering businesses worldwide with innovative solutions that transform operations, 
-                enhance customer experiences, and drive sustainable growth through cutting-edge technology 
-                and dedicated support.
+                To empower businesses with intelligent, automated payroll solutions that save time, reduce errors, and ensure compliance—so they can focus on what matters most: growing their business and taking care of their people.
               </p>
             </div>
 
@@ -176,7 +172,7 @@ const About = () => {
                 <p className="text-sm text-gray-600">Global Clients</p>
               </div>
               <div className="transition-transform duration-300 hover:scale-105">
-                <div className="text-4xl font-bold text-blue-600">{stats.interactions}M+</div>
+                <div className="text-4xl font-bold text-blue-600">{stats.interactions}+</div>
                 <p className="text-sm text-gray-600">Interactions</p>
               </div>
               <div className="transition-transform duration-300 hover:scale-105">

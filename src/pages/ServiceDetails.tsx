@@ -48,7 +48,7 @@ const ServiceDetail = () => {
       ],
       
       stats: [
-        { value: "500K+", label: "Payrolls Processed Monthly" },
+        { value: "5000+", label: "Payrolls Processed" },
         { value: "99.9%", label: "Accuracy Rate" },
         { value: "5 min", label: "Average Processing Time" },
         { value: "24/7", label: "System Availability" }

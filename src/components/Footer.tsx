@@ -24,7 +24,7 @@ const Footer = () => {
       logo: 'https://i.ibb.co/s9J9ScsZ/Salar.png', // <-- YOUR LOGO FILE
       social: [
         // { icon: Facebook, href: '#facebook', label: 'Facebook' },
-        // { icon: Twitter, href: '#twitter', label: 'Twitter' },
+        { icon: Twitter, href: '#https://x.com/salarient25?s=11', label: 'Twitter' },
         { icon: Linkedin, href: 'linkedin.com/in/salarient-hr-software-solutions-967405379/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app', label: 'LinkedIn' },
         { icon: Instagram, href: 'https://www.instagram.com/salarient_hr_solutions/?igsh=MXE1d24xY2dsdHZodw%3D%3D#', label: 'Instagram' }
       ]
@@ -41,7 +41,7 @@ const Footer = () => {
       { name: 'Time & Attendance', href: '#docs' },
       { name: 'HR Management', href: '#support' },
       { name: 'Benifits Admin', href: '#privacy' },
-      { name: 'Terms of Service', href: '#terms' }
+   
     ],
     contact: [
       { icon: MapPin, text: '3-2-44, Bagameri, Kukatpally, Hyderabad -500072' },
