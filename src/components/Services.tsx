@@ -59,7 +59,7 @@ const Services = () => {
   ];
 
   return (
-    <section className="relative min-h-screen bg-white py-20 px-4 sm:px-6 lg:px-8 -mt-28">
+    <section id="services" className="relative min-h-screen bg-white py-20 px-4 sm:px-6 lg:px-8 -mt-28">
 
       <div className="relative max-w-7xl mx-auto">
 
