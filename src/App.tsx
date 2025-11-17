@@ -11,6 +11,7 @@ import Payment from "./components/Payments";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop"; // ✅ Import
 
 const queryClient = new QueryClient();
 
@@ -21,8 +22,12 @@ const App = () => (
       <Sonner />
 
       <HashRouter>
+        {/* ✅ Scroll to top on route change */}
+        <ScrollToTop />
+
         <Routes>
- <Route index element={<Index />} />
+          <Route index element={<Index />} />
+
           {/* Layout with Header + Footer */}
           <Route
             element={
@@ -35,14 +40,12 @@ const App = () => (
               </>
             }
           >
-           
             <Route path="/services/:serviceId" element={<ServiceDetail />} />
             <Route path="/payment" element={<Payment />} />
           </Route>
 
           {/* Not Found */}
           <Route path="*" element={<NotFound />} />
-
         </Routes>
       </HashRouter>
     </TooltipProvider>
